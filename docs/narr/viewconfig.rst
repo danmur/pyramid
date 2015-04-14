@@ -1002,7 +1002,7 @@ there's a ``should_cache`` GET or POST variable:
    @view_config(http_cache=3600)
    def view(request):
        response = Response()
-       if not 'should_cache' in request.params:
+       if 'should_cache' not in request.params:
            response.cache_control.prevent_auto = True
        return response
 
